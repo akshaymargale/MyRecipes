@@ -3,16 +3,18 @@ import 'package:flutter/material.dart';
 import './single_category_screen.dart';
 
 class CategoryItem extends StatelessWidget {
+  final String id;
   final String title;
   final Color color;
   CategoryItem(
+    this.id,
     this.title,
     this.color,
   );
 
   void selectCategory(BuildContext ctx) {
     Navigator.of(ctx).push(MaterialPageRoute(builder: (_) {
-      return SingleCategoryScreen();
+      return SingleCategoryScreen(id, title);
     }));
   }
 
